@@ -1,0 +1,19 @@
+Create a new Google Cloud project on Google Cloud Platform
+Download and install Google Cloud CLI in terminal
+From the source directory where Google Cloud CLI was installed, run "gcloud init"
+Select the new project ID created previosly
+Then we will create a new db instance on Google Cloud with “gcloud sql instances create mypostgres --database-version=POSTGRES_14 --cpu=2 --memory=7680MB --region=us-central”
+Create users for the database: “gcloud sql users set-password postgres --instance=mypostgres --password=root”
+Then, create a db instance for the go microservices “gcloud sql databases create chicago_business_intelligence --instance=mypostgres”
+Open the Google Cloud console and confirm the SQL instance created is running
+Enable Cloud Build, Cloud Run, and Cloud SQL APIs
+Then, create a trigger button after enabling Cloud Build API
+Fill the required details, create a new github repo and authenticate it on the trigger details, then save the trigger
+Set the necessary roles in the IAM page
+Copy the instance connection name for the create SQL instance on Google Cloud and post it on the main.go connection string
+Push the source code and other files
+The build will be triggered and the docker and cbi images will be built on Google Cloud
+Then, go to Cloud Run and copy the pgadmin URL
+Open the pgadmin url on the browser
+Login with the required details, then register the server with the required host names and port
+Verify the tables we populated on Google Cloud
